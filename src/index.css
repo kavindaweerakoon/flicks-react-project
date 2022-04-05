@@ -353,6 +353,10 @@ button:focus {
   flex-direction: column;
   align-items: center;
 }
+.movie__img--wrapper {
+  max-width: 360px;
+  cursor: pointer;
+}
 
 .movie__img {
   border-radius: 5%;
@@ -362,18 +366,17 @@ button:focus {
   width: 100%;
 }
 
-.movie__img--wrapper {
-  max-width: 360px;
-}
 
-.movie__img:hover {
-  transform: scale(1.025);
-}
 
 .movie__title {
   margin-top: 20px;
   font-size: 20px;
   text-align: center;
+  cursor: pointer;
+}
+
+.movie__img:hover {
+  transform: scale(1.025);
 }
 
 .movie__rating {
@@ -388,4 +391,28 @@ button:focus {
   text-align: center;
   font-size: 12px;
   padding: 0 16px;
+}
+
+.no-movie {
+  display: block;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 720px; 
+  margin: 0 auto;
+  margin-top: -96px;
+
+}
+
+.no-movie h1 {
+  font-size: 36px; 
+
+}
+
+.no-movie img {
+  width: 70%;
+  margin-bottom: 32px;
+  
 }

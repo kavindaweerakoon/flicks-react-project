@@ -3,6 +3,7 @@ import HomeImage from "../assets/undraw_movie_night_re_9umk.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Nav from "../components/Nav";
 
+
 const Landing = () => {
   return (
     <>
