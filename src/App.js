@@ -12,8 +12,8 @@ function App() {
         <Routes>
           <Nav />
           <Route path="/" exact component={Home} />
-          <Route path="/movies" exact render={() => <Movies/>}/>
-          <Route path="/movies/:id" element={<MovieInfo MovieInfo={MovieInfo} />}/>
+          <Route path="/movies" exact element={<Movies />} />
+          <Route path="/movies/tt0322259" element={<MovieInfo />} />
         </Routes>
       </div>
     </Router>

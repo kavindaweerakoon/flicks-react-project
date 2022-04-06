@@ -1,9 +1,9 @@
 import { Axios } from "axios";
 import React, { useState, useEffect } from "react";
-import Movie from "../ui/Movie";
-import { useNavigate } from "react-router-dom";
 
-const MovieInfo = ({MovieInfo}) => {
+
+
+const MovieInfo = ({movie}) => {
   
   const [loading, setLoading] = useState(true);
   const [movieInfo, setMovieInfo] = useState([]);

@@ -1,27 +1,31 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Nav = () => {
+  
+  
   return (
     <div>
       <nav>
         <div className="nav__container">
-          <a href="/" className="nav__logo bg">
+          <Link to="/" className="nav__logo bg">
             <FontAwesomeIcon
               icon="fa-solid fa-masks-theater"
               className="logo"
             />
             flicks
-          </a>
+          </Link>
 
           <div className="nav__links">
-            <a href="/" className="nav__link bg">
+            <Link to="/" className="nav__link bg">
               Home
-            </a>
-            <a href=" " className="nav__link bg no-pointer">
+            </Link>
+            <Link to=" " className="nav__link bg no-pointer">
               Contact
-            </a>
+            </Link>
+           
+
           </div>
         </div>
       </nav>
