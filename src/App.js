@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Nav />
+         
           <Route path="/" exact component={Home} />
           <Route path="/movies" exact element={<Movies />} />
           <Route path="/movies/tt0322259" element={<MovieInfo />} />
