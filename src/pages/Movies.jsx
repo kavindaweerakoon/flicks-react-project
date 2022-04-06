@@ -17,7 +17,7 @@ const Movies = () => {
   const [loading, setLoading] = useState();
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-  const [skeleton, setSkeleton] = useState(Boolean);
+  const [noMovie, setNoMovie] = useState(Boolean);
 
   async function getMovies(movieTitle) {
     setLoading(true);
@@ -29,10 +29,10 @@ const Movies = () => {
 
     if (data.Search) {
       setMovies(data.Search);
-      setSkeleton(false);
+      setNoMovie(false);
     } else {
       setMovies([]);
-      setSkeleton(true);
+      setNoMovie(true);
     }
     console.log(movies);
     setLoading(false);
@@ -97,8 +97,8 @@ const Movies = () => {
         {loading ? (skeleton code) : (movies code) ? }
          */}
           {loading ? (
-            "loading"
-          ) : skeleton ? (
+            "loading" // skeleton code
+          ) : noMovie ? (
             <NoMovie />
           ) : (
             movies

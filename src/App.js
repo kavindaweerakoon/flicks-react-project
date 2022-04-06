@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Nav from "./components/Nav";
+
 import Home from "./pages/Home";
 import MovieInfo from "./pages/MovieInfo";
 
@@ -13,7 +13,7 @@ function App() {
          
           <Route path="/" exact component={Home} />
           <Route path="/movies" exact element={<Movies />} />
-          <Route path="/movies/tt0322259" element={<MovieInfo />} />
+          <Route path="/movies/:id" element={<MovieInfo />} />
         </Routes>
       </div>
     </Router>
