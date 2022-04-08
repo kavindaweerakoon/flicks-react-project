@@ -1,5 +1,7 @@
 import { Axios } from "axios";
 import React, { useState, useEffect } from "react";
+import Nav from "../components/Nav";
+
 
 
 
@@ -32,6 +34,7 @@ const MovieInfo = ({movie}) => {
 
   return (
     <div>
+      <Nav/>
       <div className="movie">
         <div className="movie__img--wrapper">
           <img src={movieInfo.Poster} alt="" className="movie__img" />
