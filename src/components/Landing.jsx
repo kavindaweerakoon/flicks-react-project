@@ -2,7 +2,7 @@ import React from "react";
 import HomeImage from "../assets/undraw_movie_night_re_9umk.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Nav from "../components/Nav";
-
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -23,11 +23,12 @@ const Landing = () => {
               placeholder="Search using any keyword"
               required="required"
             />
-            <button>
-              <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-            </button>
+            <Link to="/movies">
+              <button>
+                <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+              </button>
+            </Link>
           </form>
-
           <div class="image">
             <img src={HomeImage} alt="" class="image--wrapper" />
           </div>

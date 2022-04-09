@@ -6,8 +6,9 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faMasksTheater,
   faMagnifyingGlass,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faMasksTheater, faMagnifyingGlass);
+library.add(faMasksTheater, faMagnifyingGlass, faArrowLeft);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')

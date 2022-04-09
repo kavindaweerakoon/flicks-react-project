@@ -3,8 +3,6 @@
 
 import React, { useState, useEffect } from "react";
 
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 // import NoResults from "../assets/undraw_movie_night_re_9umk.svg";
 
@@ -66,7 +64,7 @@ const Movies = () => {
       <section id="display">
         <Nav />
         <img src={NavBackground} className="nav__background" alt="" />
-        <form class="search--movies">
+        <div class="search--movies">
           <input
             type="text"
             id="text"
@@ -74,7 +72,7 @@ const Movies = () => {
             onChange={(e) => setSearch(e.target.value)}
             value={search}
           />
-        </form>
+        </div>
       </section>
       <section id="movies">
         <select

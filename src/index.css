@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -92,13 +92,12 @@ button {
 
 /* NAVIGATION */
 .nav__container {
-  width: 100%;  
+  width: 100%;
   padding: 32px 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-
 }
 
 .nav__background {
@@ -109,7 +108,6 @@ button {
   filter: brightness(0.6);
   object-fit: cover;
 }
-
 
 .nav__logo {
   font-size: 36px;
@@ -148,8 +146,6 @@ button {
   color: #32588d;
 }
 
-
-
 /* LANDING  */
 
 #landing {
@@ -159,7 +155,6 @@ button {
 #display {
   display: flex;
   flex-direction: column;
-  
 }
 
 .about {
@@ -174,10 +169,9 @@ button {
   text-align: center;
   border-right: 3px solid #1a202c;
   overflow: hidden;
-  white-space: nowrap;  
+  white-space: nowrap;
   margin: 0 auto;
-  animation: typing 1.5s forwards steps(33, end),
-  blinker .5s step-end infinite;
+  animation: typing 1.5s forwards steps(33, end), blinker 0.5s step-end infinite;
 }
 
 .about__subtitle {
@@ -190,17 +184,24 @@ button {
   animation: fadeIn 2s 1.5s forwards;
 }
 
-
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blinker {
-  from, to {border-color: transparent;}
-  50% {border-color: #1a202c;}
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #1a202c;
+  }
 }
-
 
 .search {
   display: flex;
@@ -287,7 +288,6 @@ button:focus {
   border-radius: 8px;
   padding: 20px 16px;
   margin: 0 16px;
-  
 }
 
 .search--movies input::placeholder {
@@ -302,7 +302,7 @@ button:focus {
 .search--movies button {
   transition-property: color, background-color;
   border-radius: 10%;
-  padding: 4px 16px;  
+  padding: 4px 16px;
   position: absolute;
   margin-left: 35rem;
   background-color: inherit;
@@ -312,14 +312,11 @@ button:focus {
 .search--movies i {
   font-size: 32px;
   padding: 8px;
-  
 }
-
-
 
 .search--movies button:hover {
   background-color: #ff9e00;
-  color: white;  
+  color: white;
 }
 
 /* MOVIES */
@@ -339,15 +336,53 @@ button:focus {
   margin-bottom: 32px;
 }
 
+.movie__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 12px;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  font-size: 24px;
+  padding: 24px 16px;
+}
+
+.back a,
+svg {
+  transition: all 300ms ease;
+  color: #1a202c;
+}
+
+.back:hover a,
+.back:hover svg {
+  color: var(--orange);
+}
+
+.movie__info--right {
+  max-width: 50%;
+  margin-left: auto;
+}
+
 .movies__container {
-  display: flex;    
+  display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 1400px;
 }
 
 .movie {
-  width: calc(100%/3);
+  width: calc(100% / 3);
   margin: 32px auto;
   display: flex;
   flex-direction: column;
@@ -360,13 +395,11 @@ button:focus {
 
 .movie__img {
   border-radius: 5%;
-  box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 2px 5px 16px 0px #0b325e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   height: 400px;
   transition: all 300ms ease;
   width: 100%;
 }
-
-
 
 .movie__title {
   margin-top: 20px;
@@ -400,19 +433,16 @@ button:focus {
   justify-content: center;
   text-align: center;
   align-items: center;
-  max-width: 720px; 
+  max-width: 720px;
   margin: 0 auto;
   margin-top: -96px;
-
 }
 
 .no-movie h1 {
-  font-size: 36px; 
-
+  font-size: 36px;
 }
 
 .no-movie img {
   width: 70%;
   margin-bottom: 32px;
-  
 }
