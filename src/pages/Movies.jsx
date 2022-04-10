@@ -101,7 +101,7 @@ const Movies = () => {
          */}
           {loading ? (
             "loading" // skeleton code
-          ) : !term|| !movies ? (
+          ) : !term|| noMovie ? (
             <NoMovie />
           ) : (
             movies

@@ -48,9 +48,10 @@ const MovieInfo = () => {
             <img src={movieInfo.Poster} alt="" className="movie__img" />
           </div>
           <div className="movie__title">
-            <h3>
-              {movieInfo.Title} ({movieInfo.Year})
-            </h3>
+            <h3>{movieInfo.Title}</h3>
+          </div>
+          <div className="movie__releaseDate">
+            Released: <b>{movieInfo.Released}</b>
           </div>
         </div>
         <div className="movie__info--right">

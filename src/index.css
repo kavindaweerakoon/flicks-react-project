@@ -20,7 +20,6 @@ body {
   --orange: #ff9e00;
 }
 
-
 .orange {
   color: var(--orange);
 }
@@ -227,11 +226,10 @@ button {
   }
 }
 
-.search__input, .search__button {
+.search__input,
+.search__button {
   font-size: 36px;
 }
-
-
 
 .search__input {
   width: 80%;
@@ -367,15 +365,19 @@ button {
   color: #1a202c;
 }
 
-
 .back__text:hover {
   color: var(--orange);
 }
 
-.back__arrow:hover  {
+.back__arrow:hover {
   color: var(--orange);
 }
 
+.movie__info--left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .movie__info--right {
   max-width: 50%;
@@ -397,9 +399,8 @@ button {
   align-items: center;
 }
 .movie__img--wrapper {
-
   cursor: pointer;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -410,10 +411,9 @@ button {
   box-shadow: 2px 5px 16px 0px #0b325e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   transition: all 300ms ease;
   float: center;
-  width:  250px;
+  width: 250px;
   height: 400px;
   object-fit: cover;
-  
 }
 
 .movie__plot {
@@ -421,7 +421,10 @@ button {
   font-size: 18px;
 }
 
-.movie__director, .movie__actors, .movie__genre, .movie__runtime {
+.movie__director,
+.movie__actors,
+.movie__genre,
+.movie__runtime {
   font-size: 14px;
 }
 
@@ -439,9 +442,8 @@ button {
 }
 
 .movie__info--left .movie__title {
-  cursor: default; 
+  cursor: default;
 }
-
 
 .movie__img:hover {
   transform: scale(1.025);
@@ -464,10 +466,6 @@ button {
   margin-right: 12px;
   font-size: 24px;
 }
-
-
-
-
 
 .movie__description {
   text-align: center;

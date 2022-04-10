@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import HomeImage from "../assets/undraw_movie_night_re_9umk.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Nav from "../components/Nav";
-import { Link,  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+localStorage.setItem("search", "")
 
 const Landing = () => {
   const [search, setSearch] = useState("");
-  localStorage.setItem("search", "")
 
 
   const handleChange = (e) => {
