@@ -1,11 +1,11 @@
 {
   "name": "flicks-react-project",
   "version": "0.1.0",
+  "homepage": "https://kavindaweerakoon.github.io/flicks-react-project/",
   "private": true,
   "engines": {
     "node": "17.8.0"
   },
-  "homepage": "https://kavindaweerakoon.github.io/flicks-react-project/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
