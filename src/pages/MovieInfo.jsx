@@ -4,18 +4,17 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Nav from "../components/Nav";
 
-const MovieInfo = ({ movie }) => {
+const MovieInfo = () => {
   const [loading, setLoading] = useState(true);
   const [movieInfo, setMovieInfo] = useState([]);
 
   const { id } = useParams();
-  console.log(id);
 
-  async function getMovieInfo(movieID) {
+  async function getMovieInfo() {
     setLoading(true);
 
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=86147053&i=${id}&plot=full`
+      `http://www.omdbapi.com/?apikey=86147053&i=${id}&plot=short`
     );
 
     setMovieInfo(data);
@@ -34,8 +33,11 @@ const MovieInfo = ({ movie }) => {
       <Nav />
 
       <div className="back">
-        <Link to="/movies">
-          <FontAwesomeIcon icon="fa-solid fa-arrow-left" />
+        <Link to="/movies" className="back__text">
+          <FontAwesomeIcon
+            icon="fa-solid fa-arrow-left"
+            className="back__arrow"
+          />
           &nbsp;Back
         </Link>
       </div>
@@ -46,7 +48,9 @@ const MovieInfo = ({ movie }) => {
             <img src={movieInfo.Poster} alt="" className="movie__img" />
           </div>
           <div className="movie__title">
-            {movieInfo.Title} ({movieInfo.Year})
+            <h3>
+              {movieInfo.Title} ({movieInfo.Year})
+            </h3>
           </div>
         </div>
         <div className="movie__info--right">
@@ -66,7 +70,10 @@ const MovieInfo = ({ movie }) => {
             <p>Runtime: {movieInfo.Runtime}</p>
           </div>
           <div className="movie__rating">
-            <p>Rating: {movieInfo.imdbRating}</p>
+            <FontAwesomeIcon icon="fa-solid fa-star gold" />
+            <p>
+              IMBd Rating: <b>{movieInfo.imdbRating} </b>({movieInfo.imdbVotes}){" "}
+            </p>
           </div>
         </div>
       </div>

@@ -7,8 +7,10 @@ import {
   faMasksTheater,
   faMagnifyingGlass,
   faArrowLeft,
+  faStar,
+  
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faMasksTheater, faMagnifyingGlass, faArrowLeft);
+library.add(faMasksTheater, faMagnifyingGlass, faArrowLeft, faStar);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')

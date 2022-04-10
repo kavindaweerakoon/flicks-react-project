@@ -7,21 +7,24 @@ import axios from "axios";
 // import NoResults from "../assets/undraw_movie_night_re_9umk.svg";
 
 import Nav from "../components/Nav";
-import NavBackground from "../assets/504616.jpg";
+import NavBackground from "../assets/movie-theater-4609877.jpg";
 import Movie from "../ui/Movie";
 import NoMovie from "../components/NoMovie";
 
 const Movies = () => {
   const [loading, setLoading] = useState();
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState("");
-  const [noMovie, setNoMovie] = useState(Boolean);
+  const [search, setSearch] = useState();
+  const [noMovie, setNoMovie] = useState(Boolean);  
+  
+  let term = localStorage.getItem("search");
 
   async function getMovies(movieTitle) {
+    
     setLoading(true);
 
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=86147053&s=${movieTitle}&type=movie`
+      `http://www.omdbapi.com/?apikey=86147053&s=${term || movieTitle }&type=movie`
     );
     // if you to get the array from the object that you called look for the name of the array that you called then append it to the variable where the data from the API call is stored at
 
@@ -32,12 +35,12 @@ const Movies = () => {
       setMovies([]);
       setNoMovie(true);
     }
-    console.log(movies);
+
     setLoading(false);
   }
 
   useEffect(() => {
-    getMovies(search);
+    getMovies(search);    
   }, [search]);
 
   function filterMovies(filter) {
@@ -64,13 +67,15 @@ const Movies = () => {
       <section id="display">
         <Nav />
         <img src={NavBackground} className="nav__background" alt="" />
-        <div class="search--movies">
+        <div className="search--movies">
           <input
             type="text"
             id="text"
             placeholder="Search using any keyword"
-            onChange={(e) => setSearch(e.target.value)}
-            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value)
+              localStorage.setItem("search", e.target.value)}}
+            value={term}
           />
         </div>
       </section>
@@ -96,7 +101,7 @@ const Movies = () => {
          */}
           {loading ? (
             "loading" // skeleton code
-          ) : noMovie ? (
+          ) : !term|| !movies ? (
             <NoMovie />
           ) : (
             movies

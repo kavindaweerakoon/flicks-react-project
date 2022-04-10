@@ -1,36 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeImage from "../assets/undraw_movie_night_re_9umk.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Nav from "../components/Nav";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const [search, setSearch] = useState("");
+  localStorage.setItem("search", "")
+
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    localStorage.setItem("search", e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/movies`);
+  };
+
+  const navigate = useNavigate();
+// use localstorage to store the search value
   return (
     <>
       <Nav />
       <section id="landing">
-        <header class="about row">
-          <h1 class="about__title orange">
+        <header className="about row">
+          <h1 className="about__title orange">
             Canada's most used movie database platform
           </h1>
 
-          <h2 class="about__subtitle orange">Find your picks with flicks</h2>
+          <h2 className="about__subtitle orange">
+            Find your picks with flicks
+          </h2>
 
-          <form class="search" action="/movies">
+          <form className="search">
             <input
+              className="search__input"
               type="text"
               id="text"
               placeholder="Search using any keyword"
               required="required"
+              onChange={handleChange}
+              onSubmit={search ? handleSubmit : null}
             />
-            <Link to="/movies">
-              <button>
-                <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-              </button>
-            </Link>
+            <button className="search__button" type="submit" onClick={search ? handleSubmit : null}  > 
+              <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+            </button>
           </form>
-          <div class="image">
-            <img src={HomeImage} alt="" class="image--wrapper" />
+
+          <div className="image">
+            <img src={HomeImage} alt="" className="image--wrapper" />
           </div>
         </header>
       </section>

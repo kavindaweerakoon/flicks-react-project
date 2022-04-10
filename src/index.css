@@ -20,6 +20,7 @@ body {
   --orange: #ff9e00;
 }
 
+
 .orange {
   color: var(--orange);
 }
@@ -134,6 +135,7 @@ button {
 .nav__link {
   margin-right: 36px;
   transition: color 300ms ease;
+  font-size: 16px;
 }
 
 .nav__link:hover,
@@ -225,12 +227,13 @@ button {
   }
 }
 
-.search input,
-button {
+.search__input, .search__button {
   font-size: 36px;
 }
 
-.search input {
+
+
+.search__input {
   width: 80%;
   border: 1px solid grey;
   border-radius: 16px;
@@ -242,12 +245,12 @@ button {
   font-size: 24px;
 }
 
-.search input:hover,
-input:focus {
+.search__button:hover,
+.search__button:focus {
   border-color: var(--orange);
 }
 
-.search button {
+.search__button {
   padding: 12px 36px;
   margin-left: 32px;
   border: 1px solid black;
@@ -256,8 +259,8 @@ input:focus {
   background-color: inherit;
 }
 
-.search button:hover,
-button:focus {
+.search__button:hover,
+.search__button:focus {
   color: white;
   background-color: var(--orange);
   border-color: white;
@@ -358,16 +361,21 @@ button:focus {
   padding: 24px 16px;
 }
 
-.back a,
-svg {
+.back__text,
+.back__arrow {
   transition: all 300ms ease;
   color: #1a202c;
 }
 
-.back:hover a,
-.back:hover svg {
+
+.back__text:hover {
   color: var(--orange);
 }
+
+.back__arrow:hover  {
+  color: var(--orange);
+}
+
 
 .movie__info--right {
   max-width: 50%;
@@ -389,16 +397,38 @@ svg {
   align-items: center;
 }
 .movie__img--wrapper {
-  max-width: 360px;
+
   cursor: pointer;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie__img {
   border-radius: 5%;
   box-shadow: 2px 5px 16px 0px #0b325e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  height: 400px;
   transition: all 300ms ease;
-  width: 100%;
+  float: center;
+  width:  250px;
+  height: 400px;
+  object-fit: cover;
+  
+}
+
+.movie__plot {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.movie__director, .movie__actors, .movie__genre, .movie__runtime {
+  font-size: 14px;
+}
+
+.movie__info--left .movie__img {
+  width: 350px;
+  height: 500px;
+  margin-bottom: 24px;
 }
 
 .movie__title {
@@ -408,17 +438,36 @@ svg {
   cursor: pointer;
 }
 
+.movie__info--left .movie__title {
+  cursor: default; 
+}
+
+
 .movie__img:hover {
   transform: scale(1.025);
 }
 
-.movie__rating {
-  margin: 16px auto;
+.movie__info--left .movie__img:hover {
+  transform: none;
+  cursor: default;
 }
 
-.movie__rating i {
-  color: goldenrod;
+.movie__rating {
+  margin: 16px auto;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
+
+.movie__rating svg {
+  color: goldenrod;
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+
+
+
 
 .movie__description {
   text-align: center;
