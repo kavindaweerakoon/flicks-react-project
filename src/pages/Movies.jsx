@@ -24,7 +24,7 @@ const Movies = () => {
     setLoading(true);
 
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=86147053&s=${term || movieTitle }&type=movie`
+      `https://www.omdbapi.com/?apikey=86147053&s=${term || movieTitle }&type=movie`
     );
     // if you to get the array from the object that you called look for the name of the array that you called then append it to the variable where the data from the API call is stored at
 
