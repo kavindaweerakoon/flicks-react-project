@@ -493,3 +493,90 @@ button {
   width: 70%;
   margin-bottom: 32px;
 }
+
+/* SKELETON */
+
+/* Movies.jsx skeleton */
+
+.movie__img--skeleton,
+.movie__title--skeleton {
+  cursor: wait;
+}
+
+.movie__img--skeleton {
+  height: 400px;
+  width: 250px;
+  border-radius: 5%;
+  background-color: lightgray;
+}
+
+.movie__title--skeleton {
+  height: 30px;
+  width: 275px;
+  border-radius: 5%;
+  background-color: lightgray;
+  margin-top: 20px;
+}
+
+/* MovieInfo.jsx skeleton */
+
+.movie__info--left .movie__img--skeleton {
+  height: 500px;
+  width: 350px;
+  margin-bottom: 24px;
+  border-radius: 5%;
+  background-color: lightgray;
+  margin-left: -125%;
+}
+
+.movie__info--left .movie__title--skeleton {
+  margin-top: -20px;
+  height: 25px;
+  width: 275px;
+  border-radius: 5px;
+  background-color: lightgray;
+  margin-left: -112.5%;
+}
+
+.movie__releaseDate--skeleton {
+  margin-top: 10px;
+  height: 20px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: lightgray;
+  margin-left: -155%;
+  cursor: wait;
+}
+
+.movie__plot--skeleton {
+  margin-top: -175%;
+  margin-bottom: 16px;
+  height: 125px;
+  width: 500px;
+  border-radius: 5px;
+  background-color: lightgray;
+  margin-bottom: 24px;
+  cursor: wait;
+}
+
+.movie__director--skeleton,
+.movie__actors--skeleton,
+.movie__genre--skeleton,
+.movie__runtime--skeleton {
+  height: 14px;
+  width: 475px;
+  border-radius: 5px;
+  background-color: lightgray;
+  margin-bottom: 8px;
+  cursor: wait;
+}
+
+.movie__rating--skeleton  {
+  height: 30px;
+  width: 350px;
+  border-radius: 5px;
+  background-color: lightgray;
+  background-size: auto;
+  margin: 24px auto;
+  cursor: wait;
+}

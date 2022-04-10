@@ -8,23 +8,25 @@ import axios from "axios";
 
 import Nav from "../components/Nav";
 import NavBackground from "../assets/movie-theater-4609877.jpg";
-import Movie from "../ui/Movie";
+import MovieUI from "../ui/MovieUI";
 import NoMovie from "../components/NoMovie";
+import MovieSkeleton from "../components/MovieSkeleton";
 
 const Movies = () => {
   const [loading, setLoading] = useState();
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState();
-  const [noMovie, setNoMovie] = useState(Boolean);  
-  
+  const [noMovie, setNoMovie] = useState(Boolean);
+
   let term = localStorage.getItem("search");
 
   async function getMovies(movieTitle) {
-    
     setLoading(true);
 
     const { data } = await axios.get(
-      `https://www.omdbapi.com/?apikey=86147053&s=${term || movieTitle }&type=movie`
+      `https://www.omdbapi.com/?apikey=86147053&s=${
+        term || movieTitle
+      }&type=movie`
     );
     // if you to get the array from the object that you called look for the name of the array that you called then append it to the variable where the data from the API call is stored at
 
@@ -35,12 +37,13 @@ const Movies = () => {
       setMovies([]);
       setNoMovie(true);
     }
-
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 250);
   }
 
   useEffect(() => {
-    getMovies(search);    
+    getMovies(search);
   }, [search]);
 
   function filterMovies(filter) {
@@ -73,8 +76,9 @@ const Movies = () => {
             id="text"
             placeholder="Search using any keyword"
             onChange={(e) => {
-              setSearch(e.target.value)
-              localStorage.setItem("search", e.target.value)}}
+              setSearch(e.target.value);
+              localStorage.setItem("search", e.target.value);
+            }}
             value={term}
           />
         </div>
@@ -100,13 +104,13 @@ const Movies = () => {
         {loading ? (skeleton code) : (movies code) ? }
          */}
           {loading ? (
-            "loading" // skeleton code
-          ) : !term|| noMovie ? (
+            new Array(6).fill(0).map((_, index) => <MovieSkeleton />)
+          ) : !term || noMovie ? (
             <NoMovie />
           ) : (
             movies
               .slice(0, 6)
-              .map((movie) => <Movie movie={movie} key={movie.id} />)
+              .map((movie) => <MovieUI movie={movie} key={movie.id} />)
           )}
         </div>
       </section>
