@@ -279,7 +279,7 @@ button {
   flex-direction: row;
   justify-content: center;
   padding: 48px 0;
-  margin: auto;
+  margin: 0 auto;
   width: 800px;
 }
 
@@ -327,15 +327,17 @@ button {
 }
 
 #movies select {
-  display: flex;
-
+  display: none;
   border: 1px solid grey;
   border-radius: 8px;
   padding: 12px 16px;
-  margin: 0 70%;
-
+  margin: 0 75%;
   margin-bottom: 32px;
 }
+
+.sort #movies select {
+  display: flex;
+} 
 
 .movie__info {
   display: flex;
@@ -491,7 +493,7 @@ button {
 
 .no-movie img {
   width: 70%;
-  margin-bottom: 32px;
+  margin: 96px auto;
 }
 
 /* SKELETON */
@@ -571,7 +573,7 @@ button {
   cursor: wait;
 }
 
-.movie__rating--skeleton  {
+.movie__rating--skeleton {
   height: 30px;
   width: 350px;
   border-radius: 5px;
@@ -579,4 +581,80 @@ button {
   background-size: auto;
   margin: 24px auto;
   cursor: wait;
+}
+
+/* MEDIA QUERIES */
+
+/* TABLETS */
+
+@media (max-width: 984px) {
+  .about {
+    margin-top: 7.5%;
+  }
+
+
+  .nav__container {
+    padding: 42px 0;
+  }
+
+  .nav__logo {
+    font-size: 42px;
+    
+  }
+
+  .nav__link {
+    font-size: 22px;
+  }
+
+  .about__title {
+    font-size: 24px;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about__subtitle {
+    margin: 24px auto;
+    font-size: 20px;
+  }
+
+  .search {
+    max-width: 85%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .search__button {
+    display: none;
+  }
+
+  .search__input {
+    text-align: center;
+    font-size: 36px;
+  }
+
+  .search__input::placeholder {
+    text-align: center;
+  }
+
+  .image--wrapper {
+    max-width: 95%;
+    margin-top: 12.5%;
+  }
+
+  .search--movies  {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .movie {
+    width: 50%;
+  }
+
+  .movie__info--right,
+  .movie__info--left {
+   margin: 0 5%;
+  }
+
+  
 }

@@ -18,6 +18,14 @@ const Movies = () => {
   const [search, setSearch] = useState();
   const [noMovie, setNoMovie] = useState(Boolean);
 
+  function showSort() {
+    document.body.classList += " sort";
+  }
+
+  function hideSort() {
+    document.body.classList.remove("sort");
+  }
+
   let term = localStorage.getItem("search");
 
   async function getMovies(movieTitle) {
@@ -104,13 +112,15 @@ const Movies = () => {
         {loading ? (skeleton code) : (movies code) ? }
          */}
           {loading ? (
-            new Array(6).fill(0).map((_, index) => <MovieSkeleton />)
+            (hideSort(),
+            new Array(6).fill(0).map((_, index) => <MovieSkeleton />))
           ) : !term || noMovie ? (
             <NoMovie />
           ) : (
+            (showSort(),
             movies
               .slice(0, 6)
-              .map((movie) => <MovieUI movie={movie} key={movie.id} />)
+              .map((movie) => <MovieUI movie={movie} key={movie.id} />))
           )}
         </div>
       </section>
