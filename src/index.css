@@ -81,7 +81,7 @@ button {
 
 .row {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 12px;
 }
@@ -134,7 +134,7 @@ button {
 .nav__link {
   margin-right: 36px;
   transition: color 300ms ease;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .nav__link:hover,
@@ -149,10 +149,6 @@ button {
 
 /* LANDING  */
 
-#landing {
-  min-height: 100vh;
-}
-
 #display {
   display: flex;
   flex-direction: column;
@@ -163,16 +159,16 @@ button {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .about__title {
   font-weight: 700;
-  font-size: 48px;
+  font-size: 42px;
   text-align: center;
-  border-right: 3px solid #1a202c;
   overflow: hidden;
-  white-space: nowrap;
   margin: 0 auto;
-  animation: typing 1.5s forwards steps(33, end), blinker 0.5s step-end infinite;
+  opacity: 0;
+  animation: fadeIn 1s 0s forwards;
 }
 
 .about__subtitle {
@@ -182,26 +178,7 @@ button {
   text-align: center;
   font-size: 30px;
   opacity: 0;
-  animation: fadeIn 2s 1.5s forwards;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blinker {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #1a202c;
-  }
+  animation: fadeIn 1s 1s forwards;
 }
 
 .search {
@@ -212,7 +189,7 @@ button {
   padding: 48px 0;
   margin-left: 64px;
   width: 800px;
-  animation: fadeIn 2s 2s forwards;
+  animation: fadeIn 1.5s 1.5s forwards;
   opacity: 0;
 }
 
@@ -240,7 +217,7 @@ button {
 }
 
 .search input::placeholder {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .search__button:hover,
@@ -270,7 +247,7 @@ button {
   padding: 64px;
   margin: 0 auto;
   opacity: 0;
-  animation: fadeIn 2s 2s forwards;
+  animation: fadeIn 1.5s 1.5s forwards;
 }
 
 .search--movies {
@@ -337,7 +314,8 @@ button {
 
 .sort #movies select {
   display: flex;
-} 
+  
+}
 
 .movie__info {
   display: flex;
@@ -587,19 +565,31 @@ button {
 
 /* TABLETS */
 
-@media (max-width: 984px) {
-  .about {
-    margin-top: 7.5%;
+@media only screen and (max-width: 1024px) {
+  #movies {
+    margin-top: 3rem;
   }
 
+  #movies select {
+    margin: 16px 75%;
+  }
+
+  .image {
+    width: 70%;
+    padding: 10px;
+  }
 
   .nav__container {
-    padding: 42px 0;
+    padding-top: 42px;
+    padding-bottom: 12px;
+  }
+
+  .nav__background {
+    height: 200px;
   }
 
   .nav__logo {
     font-size: 42px;
-    
   }
 
   .nav__link {
@@ -607,23 +597,24 @@ button {
   }
 
   .about__title {
-    font-size: 24px;
-    max-width: 80%;
+    font-size: 36px;
     margin: 0 auto;
     text-align: center;
   }
 
   .about__subtitle {
     margin: 24px auto;
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .search {
     max-width: 85%;
     margin: 0 auto;
     flex-direction: column;
+    padding-bottom: 0;
   }
 
+  
   .search__button {
     display: none;
   }
@@ -638,23 +629,80 @@ button {
   }
 
   .image--wrapper {
-    max-width: 95%;
+    max-width: 85vw;
     margin-top: 12.5%;
   }
 
-  .search--movies  {
+  .search--movies {
     padding: 0;
     margin: 0 auto;
+    width: 95%;
   }
 
   .movie {
     width: 50%;
   }
 
-  .movie__info--right,
-  .movie__info--left {
-   margin: 0 5%;
+  .sort #movies select {
+    width: 80%;
+    margin: 0 auto;
   }
 
+  .movie__info--right,
+  .movie__info--left {
+    margin: 0 5%;
+  }
+
+  .movie__info--right {
+    margin: 0 auto;
+    min-width: 40%;
+  }
+
+  .movie__director--skeleton,
+  .movie__actors--skeleton,
+  .movie__genre--skeleton,
+  .movie__runtime--skeleton,
+  .movie__plot--skeleton,
+  .movie__rating--skeleton {
+    margin-left: 20%;
+  
+  }
+}
+
+@media only screen and (max-width: 556px) {
+  
+  .about__title {
+    font-size: 24px;
+  }
+  .about__subtitle {
+    font-size: 16px;
+  }
+
+ 
+
+  .nav__logo {
+    font-size: 24px;
+    
+  }
+
+  .image--wrapper {
+    margin-top: 45%;
+  }
+
+  .nav__link {
+    font-size: 16px;
+    margin-right: 12px;
+  }
+
+  .search__input {
+    width: 100%;
+  } 
+ 
+  
+  .movie {
+    width: 100%;
+  }
+
+  
   
 }
