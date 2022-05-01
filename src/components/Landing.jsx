@@ -42,7 +42,7 @@ const Landing = () => {
               placeholder="Search using any keyword"
               required="required"
               onChange={handleChange}
-              enterkeyhint="go"
+              enterKeyHint="go"
               onSubmit={search ? handleSubmit : null}
             />
             <button className="search__button" type="submit" onClick={search ? handleSubmit : null}  > 
