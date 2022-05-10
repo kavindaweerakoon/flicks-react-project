@@ -682,7 +682,14 @@ button {
     font-size: 16px;
   }
 
- 
+ .movie__info--right {
+   max-width: none;
+   margin: 0 10%;
+ }
+
+ .movie__releaseDate {
+   margin-bottom: 8px;
+ }
 
   .nav__logo {
     font-size: 24px;
