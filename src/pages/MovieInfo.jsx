@@ -25,7 +25,7 @@ const MovieInfo = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 250);
+    }, 150);
   }
 
   useEffect(() => {

@@ -711,6 +711,8 @@ button {
     width: 100%;
   }
 
-  
+  .movie__info {
+    flex-direction: column;
+  }
   
 }
