@@ -614,10 +614,14 @@ button {
     padding-bottom: 0;
   }
 
-  
   .search__button {
-    display: none;
+    margin: 12px 0;
+    width: 80%;
+    background-color: #ff9e00;
+    color: white;
+   
   }
+  
 
   .search__input {
     text-align: center;
@@ -697,6 +701,10 @@ button {
   .search__input {
     width: 100%;
   } 
+
+  .search__button {
+    width: 100%;
+  }
  
   
   .movie {
