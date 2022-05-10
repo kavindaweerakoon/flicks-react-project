@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/flicks-react-project/static/css/main.659e2cc8.css",
+    "main.css": "/flicks-react-project/static/css/main.1fb65378.css",
     "main.js": "/flicks-react-project/static/js/main.a8ee08e1.js",
     "static/media/movie-theater-4609877.jpg": "/flicks-react-project/static/media/movie-theater-4609877.8d6bf87a512992626f1c.jpg",
     "static/media/undraw_movie_night_re_9umk.svg": "/flicks-react-project/static/media/undraw_movie_night_re_9umk.a383b07bbe41831dc9ff149febcc17a8.svg",
     "static/media/undraw_lost_re_xqjt.svg": "/flicks-react-project/static/media/undraw_lost_re_xqjt.b26406569638f3e3c90d92d534f4a76e.svg",
     "index.html": "/flicks-react-project/index.html",
-    "main.659e2cc8.css.map": "/flicks-react-project/static/css/main.659e2cc8.css.map",
+    "main.1fb65378.css.map": "/flicks-react-project/static/css/main.1fb65378.css.map",
     "main.a8ee08e1.js.map": "/flicks-react-project/static/js/main.a8ee08e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.659e2cc8.css",
+    "static/css/main.1fb65378.css",
     "static/js/main.a8ee08e1.js"
   ]
 }
