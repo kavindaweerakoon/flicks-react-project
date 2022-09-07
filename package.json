@@ -1,7 +1,7 @@
 {
   "name": "flicks-react-project",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://flicks-react-project.vercel.app/",
   "private": true,
   "engines": {
     "node": "16.x"
