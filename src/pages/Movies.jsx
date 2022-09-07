@@ -11,12 +11,19 @@ import NavBackground from "../assets/movie-theater-4609877.jpg";
 import MovieUI from "../ui/MovieUI";
 import NoMovie from "../components/NoMovie";
 import MovieSkeleton from "../components/MovieSkeleton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Movies = () => {
   const [loading, setLoading] = useState();
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState();
   const [noMovie, setNoMovie] = useState(Boolean);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getMovies(search);
+  
+  };
 
   function showSort() {
     document.body.classList += " sort";
@@ -26,7 +33,7 @@ const Movies = () => {
     document.body.classList.remove("sort");
   }
 
-  let term = localStorage.getItem("search");
+  const term = localStorage.getItem("search");
 
   async function getMovies(movieTitle) {
     setLoading(true);
@@ -50,9 +57,9 @@ const Movies = () => {
     }, 250);
   }
 
-  useEffect(() => {
-    getMovies(search);
-  }, [search]);
+useEffect(() => {
+  getMovies(term);
+}, []);
 
   function filterMovies(filter) {
     if (filter === "YEAR_LOW_TO_HIGH") {
@@ -78,19 +85,31 @@ const Movies = () => {
       <section id="display">
         <Nav />
         <img src={NavBackground} className="nav__background" alt="" />
-        <div className="search--movies">
+        <form className="search--movies">
           <input
+            className="search__input--movies"
             type="text"
             id="text"
-            placeholder="Search using any keyword"
+            placeholder={"Search using any keyword"}
+            required="required"
             onChange={(e) => {
               setSearch(e.target.value);
               localStorage.setItem("search", e.target.value);
             }}
+            enterKeyHint="search"
+            onSubmit={search ? handleSubmit : null}
             value={term}
           />
-        </div>
+          <button
+            className="search__button--movies"
+            type="submit"
+            onClick={search ? handleSubmit : null}
+          >
+            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+          </button>
+        </form>
       </section>
+
       <section id="movies">
         <select
           id="sort"
@@ -114,7 +133,7 @@ const Movies = () => {
           {loading ? (
             (hideSort(),
             new Array(6).fill(0).map((_, index) => <MovieSkeleton />))
-          ) : !term || noMovie ? (
+          ) : noMovie ? (
             <NoMovie />
           ) : (
             (showSort(),

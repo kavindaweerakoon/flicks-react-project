@@ -204,7 +204,8 @@ button {
 }
 
 .search__input,
-.search__button {
+.search__button,
+.search__button--movies {
   font-size: 36px;
 }
 
@@ -225,7 +226,8 @@ button {
   border-color: var(--orange);
 }
 
-.search__button {
+.search__button,
+.search__button--movies {
   padding: 12px 36px;
   margin-left: 32px;
   border: 1px solid black;
@@ -234,12 +236,20 @@ button {
   background-color: inherit;
 }
 
+.search__button--movies {
+  background-color: white;
+  border: none;
+  
+}
+
 .search__button:hover,
-.search__button:focus {
+.search__button:focus
+ {
   color: white;
   background-color: var(--orange);
   border-color: white;
 }
+
 
 .image {
   display: flex;
@@ -287,15 +297,16 @@ button {
   transition-duration: 300ms;
 }
 
+
+
+.search--movies
+
 .search--movies i {
   font-size: 32px;
   padding: 8px;
 }
 
-.search--movies button:hover {
-  background-color: #ff9e00;
-  color: white;
-}
+
 
 /* MOVIES */
 
@@ -463,6 +474,7 @@ button {
   max-width: 720px;
   margin: 0 auto;
   margin-top: -96px;
+  z-index: -1;
 }
 
 .no-movie h1 {
@@ -614,14 +626,16 @@ button {
     padding-bottom: 0;
   }
 
-  .search__button {
+  .search__button,
+  .search__button--movies {
     margin: 12px 0;
     width: 80%;
     background-color: #ff9e00;
     color: white;
    
   }
-  
+
+
 
   .search__input {
     text-align: center;
@@ -630,6 +644,10 @@ button {
 
   .search__input::placeholder {
     text-align: center;
+  }
+
+  .search__button--movies  {
+    display: none;
   }
 
   .image--wrapper {
@@ -673,7 +691,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 556px) {
+@media only screen and (max-width: 640px) {
   
   .about__title {
     font-size: 24px;
@@ -709,13 +727,17 @@ button {
     width: 100%;
   }
  
-  
+  .movie__title {
+    
+  }
+
   .movie {
     width: 100%;
   }
 
   .movie__info {
     flex-direction: column;
+    
   }
   
 }
