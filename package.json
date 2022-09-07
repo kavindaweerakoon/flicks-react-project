@@ -1,7 +1,7 @@
 {
   "name": "flicks-react-project",
   "version": "0.1.0",
-  "homepage": "https://kavindaweerakoon.github.io/flicks-react-project/",
+  "homepage": ".",
   "private": true,
   "engines": {
     "node": "16.x"
