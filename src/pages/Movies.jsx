@@ -22,7 +22,6 @@ const Movies = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     getMovies(search);
-  
   };
 
   function showSort() {
@@ -57,9 +56,9 @@ const Movies = () => {
     }, 250);
   }
 
-useEffect(() => {
-  getMovies(term);
-}, []);
+  useEffect(() => {
+    getMovies(term);
+  }, []);
 
   function filterMovies(filter) {
     if (filter === "YEAR_LOW_TO_HIGH") {
@@ -116,11 +115,10 @@ useEffect(() => {
           defaultValue=""
           onChange={(e) => filterMovies(e.target.value)}
         >
-          <option value="" disabled selected>
-            Sort
+          <option value="YEAR_HIGH_TO_LOW" selected>
+            Year - High to Low
           </option>
           <option value="YEAR_LOW_TO_HIGH">Year - Low to High</option>
-          <option value="YEAR_HIGH_TO_LOW">Year - High to Low</option>
           <option value="TITLE_A_TO_Z">Title - A to Z</option>
           <option value="TITLE_Z_TO_A">Title - Z to A</option>
         </select>
